@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./style/style-test.css">
+
+	<title>Form</title>
+</head>
+<body>
+
+<div class="all-content">
+	<div class="container">
+		<div class="form-wrapper">
+			<ol class="form">
+				<li class="name">
+					<p class="input-titel">Nama</p>
+					<input type="text" name="name">
+				</li>
+				<li class="usia">
+					<p class="input-titel">Umur</p>
+					<input type="number" name="umur" min="0" id="age">
+				</li>
+				<li class="k" id="k">
+					<p class="input-titel">Jenis kelamin</p>
+					<div class="input-radio">
+						<input type="radio" name="kelamin" value="laki" id="laki"><label>Laki - laki</label></input>
+						<input type="radio" name="kelamin" value="perempuan" id="cewe"><label>Perempuan</label></input>
+					</div>
+				</li>
+				<li>
+					<p class="input-titel">Tinggi badan</p>
+					<input type="number" name="tb" min="0" id="tb">
+				</li>
+				<li>
+					<p class="input-titel">Berat badan</p>
+					<input type="number" name="bb" min="0" id="bb">
+				</li>
+
+				<li class="">
+					<div class="flex">
+						<input type="checkbox" name="hb" id="hb-known">
+						<p>Anda mengetahui HB</p>
+					</div>
+					<div class="input-hb sub-input hide" id="input-hb" style="display:none;">
+						<p class="hb-input-text">HB</p>
+						<input type="number" name="hb" min="0" id="hb">
+					</div>
+				</li>
+				<li>
+					<p class="jantung-input-text">Detak jantung per menit</p>
+					<input type="number" name="detak-jantung" id="nadi">
+				</li>
+
+				<li class="flex">
+					<input type="checkbox" name="lemas" id="lemas">
+					<p>Lemas</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="pusing" id="pusing">
+					<p>Pusing</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="pucat" id="pucat">
+					<p>Kulit pucat</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="sesak" id="sesak">
+					<p>Terasa sesak ketika beraktivitas</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="konsen" id="konsen">
+					<p>Sulit berkonsentrasi</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="ngantuk" id="ngantuk">
+					<p>Sering mengantuk</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="j-takteratur" id="j-takteratur">
+					<p>Detak jantung tidak teratur</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="nafas" id="nafas">
+					<p>Nafas pendek</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="dingin" id="dingin">
+					<p>Dingin di tangan dan kaki</p>
+				</li>
+
+				<li class="flex">
+					<input type="checkbox" name="besi" id="besi">
+					<p>Mengonsumsi makanan dengan zat besi</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="c" id="vitC">
+					<p>Mengonsumsi vitamin C</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="kafein" id="cafein">
+					<p>Mengonsumsi minuman berkafein setelah makan</p>
+				</li>
+				<li id="input-mens" style="display: none;">
+					<input type="checkbox" name="mens" id="mens">
+					<p>Menstruasi berat</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="donor" id="donor">
+					<p>Donor darah rutin</p>
+				</li>
+				<li class="flex">
+					<input type="checkbox" name="fisik" id="fisik">
+					<p>Melakukan aktivitas fisik berat</p>
+				</li>
+			</ol>
+		</div>
+		<div class="submit-wrapper">
+			<button class="submit-button" id="submit-button">Submit</button>
+		</div>
+		<div class="result">
+			<div class="char" id="char">
+				<div class="chart-container">
+			        <canvas id="graphChart" style="display: none;"></canvas>
+			    </div>
+
+			</div>
+			<div class="category" id="category"></div>
+			<div class="clinical-result"><p>Hasil tes klinis: </p><p id="clinical"></p></div>
+			<div class="nutrition-result"><p>Hasil tes nutrisi: </p><p id="nutrition"></p></div>
+		<div class="explanation" id="explanation"></div>
+	</div>
+	</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+<script src="./script/query.js"></script>
+<script src="./script/processing-data.js"></script>
+<script src="./script/script.js"></script>
+<script src="./script/style.js"></script>
+
+</body>
+</html>
