@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
 body, div, a, p, input, h1, h2, h3, h4, ol, ul, li {
 	margin: 0;
 	padding: 0;
@@ -5,26 +7,61 @@ body, div, a, p, input, h1, h2, h3, h4, ol, ul, li {
 
 html, body {
 	scroll-behavior: smooth;
+	font-family: 'League Spartan';
 }
 
-input {
-	margin: 0px 5px;
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.nav-list {
+	max-width: 550px;
+	justify-content: space-between;
+	list-style-type: none;
+	margin: 20px auto;
+	display: flex;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #000;
+	font-size: 20px;
+}
+
+.nav-item {
+	padding: 7px 25px 5px 25px;
+	border-radius: 20px;
+}
+
+#nav-item-active {
+	background-color: #F38080;
+}
+
+#nav-item-active > a {
+	color: #fff;
+}
+
+.all-content {
+	margin-top: 80px;
 }
 
 .container {
-	max-width: 800px;
-	margin: auto;
+	max-width: 700px;
+	margin: 25px auto;
+	/*padding: 10px 20px;*/
 }
 
-.form {
-	list-style-type: none;
+.font-pink {
+	color: #F38080;
 }
 
-.form > li {
-	/*display: flex;*/
-	margin: 20px 0px;
+@media only screen and (max-width: 768px) {
+
+.container {
+	margin: 25px;
 }
 
-.flex {
-	display: flex;
 }
