@@ -12,9 +12,11 @@
 
 .jdl3 {
 	margin: 25px auto;
+	font-size: 24px;
 }
 
 .container2 {
+	margin-top: 25px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -38,4 +40,8 @@
 
 .logo-modul {
 	height: 70px;
+}
+
+.text > p, .text > ul > li {
+	font-size: 18px;
 }

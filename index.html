@@ -26,20 +26,54 @@
 			<a href="./kalkulator/index.html" class="nav-link">Kalkulator</a>
 		</li>
 	</ul>
+
+	<div class="nav-mobile">
+		<?xml version="1.0" encoding="utf-8"?>
+		<svg onclick="toggleMenu()" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 18L20 18" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+			<path d="M4 12L20 12" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+			<path d="M4 6L20 6" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+		</svg>
+		<ul class="nav-mobile-list" id="nav-mobile-list">
+			<li class="nav-item" id="nav-item-active">
+				<a href="./index.html" class="nav-link">Beranda</a>
+			</li>
+			<li class="nav-item">
+				<a href="./tentang/index.html" class="nav-link">Tentang</a>
+			</li>
+			<li class="nav-item">
+				<a href="./modul/index.html" class="nav-link">Modul</a>
+			</li>
+			<li class="nav-item">
+				<a href="./kalkulator/index.html" class="nav-link">Kalkulator</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 
-<div class="banner">
-	<div class="container">
-		<h1 class="jdl1">SELAMAT DATANG DI</h1>
-		<h1 class="jdl2">Anemicare</h1>
-		<h2 class="jdl3">Kenali gejalanya, cegah anemia</h2>
-		<div class="btn-page">
-			<a href="./tentang/index.html" class="btn btn1">Tentang Kami</a>
-			<a href="./kalkulator/index.html" class="btn btn2">Kalkulator</a>
+<div class="page">
+	<div class="banner">
+		<div class="container">
+			<h1 class="jdl1">SELAMAT DATANG DI</h1>
+			<h1 class="jdl2">Anemicare</h1>
+			<h2 class="jdl3">Kenali gejalanya, cegah anemia</h2>
+			<div class="btn-page">
+				<a href="./tentang/index.html" class="btn btn1">Tentang Kami</a>
+				<a href="./kalkulator/index.html" class="btn btn2">Kalkulator</a>
+			</div>
 		</div>
+		<div class="logo">
+			<img src="./assets/logo.svg">
+		</div>
+			<div class="btn-page-mobile">
+				<a href="./tentang/index.html" class="btn btn1">Tentang Kami</a>
+				<a href="./kalkulator/index.html" class="btn btn2">Kalkulator</a>
+			</div>
 	</div>
-	<img src="./assets/logo.svg">
 </div>
+
+
+<script src="./script/toggleMenu.js"></script>
 
 </body>
 </html>

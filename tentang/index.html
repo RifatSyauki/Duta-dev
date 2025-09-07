@@ -26,6 +26,29 @@
 			<a href="./" class="nav-link">Kalkulator</a>
 		</li>
 	</ul>
+
+	<div class="nav-mobile">
+		<?xml version="1.0" encoding="utf-8"?>
+		<svg onclick="toggleMenu()" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 18L20 18" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+			<path d="M4 12L20 12" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+			<path d="M4 6L20 6" stroke="#F38080" stroke-width="2" stroke-linecap="round"/>
+		</svg>
+		<ul class="nav-mobile-list" id="nav-mobile-list">
+			<li class="nav-item">
+				<a href="../index.html" class="nav-link">Beranda</a>
+			</li>
+			<li class="nav-item" id="nav-item-active">
+				<a href="./" class="nav-link">Tentang</a>
+			</li>
+			<li class="nav-item">
+				<a href="../modul/index.html" class="nav-link">Modul</a>
+			</li>
+			<li class="nav-item">
+				<a href="./" class="nav-link">Kalkulator</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 
 <div class="all-content">
@@ -54,6 +77,8 @@
 		</div>
 	</div>
 </div>
+
+<script src="../script/toggleMenu.js"></script>
 
 </body>
 </html>
