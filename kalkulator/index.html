@@ -51,8 +51,366 @@
 	</div>
 </nav>
 
+<div class="all-content">
+	<div class="container con-jdl">
+		<h1 class="font-pink jdl1">Kalkulator</h1>
+		<h1 class="jdl2">Resiko Anemia</h1>
+		<h3 class="jdl3">Yuk mulai kenali kondisi tubuh kamu!</h3>
+		<div class="text">
+			<p> Isi data singkat ini biar hasil kalkulasinya lebih akurat.</p>
+		</div>
+	</div>
+	<div class="container con-form">
+		<div class="form" id="form">
+
+			<div class="form-slide active-slide form-slide-1">
+				<div class="l-logo">
+					<div class="logo">
+						<img src="../assets/logo.svg">
+						<h1 class="jdl2 jdl-logo">Anemicare</h1>
+						<p class="text-logo">Kenali gejalanya, cegah anemia</p>
+					</div>
+				</div>
+				<div class="r-form">
+					<div class="slide-status">
+						<p>Bagian 1/5</p>
+					</div>
+					<div class="form-page">
+						<div class="head-form">
+							<h1 class="t t1">Informasi Tentang Kamu</h1>
+							<p class="t t2">Tenang, data kamu ga diapa-apain kok</p>
+						</div>
+						<div class="question">
+							<div class="q">
+								<p class="label">Nama Kamu</p>
+								<input type="text" name="nama" id="nama" class="input-text"  placeholder="Isi nama kamu di sini">
+							</div>
+							<div class="q">
+								<p class="label">Umur Kamu</p>
+								<input type="number" name="umur" id="umur" class="input-num"  placeholder="Ketik usiamu di sini">
+							</div>
+							<div class="q">
+								<p class="label">Jenis Kelamin</p>
+								<input type="radio" name="gender" id="laki" class="input-radio"><label>Laki - laki</label>
+								<input type="radio" name="gender" id="cewe" class="input-radio"><label>Perempuan</label>
+							</div>
+							<div class="q tb-bb">
+								<div class="q-tb">
+									<p class="label">Tinggi Badan</p>
+									<input type="number" name="tb" id="tb" class="input-num"  placeholder="cm">
+								</div>
+								<div class="q-bb">
+									<p class="label">Berat Badan</p>
+									<input type="number" name="bb" id="bb" class="input-num"  placeholder="kg">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-slide form-slide-2">
+				<div class="l-logo">
+					<div class="logo">
+						<img src="../assets/logo.svg">
+						<h1 class="jdl2 jdl-logo">Anemicare</h1>
+						<p class="text-logo">Kenali gejalanya, cegah anemia</p>
+					</div>
+				</div>
+				<div class="r-form">
+					<div class="slide-status">
+						<p>Bagian 2/5</p>
+					</div>
+					<div class="form-page">
+						<div class="head-form">
+							<h1 class="t t1">Informasi Tentang Kamu</h1>
+							<p class="t t2">Tenang, data kamu ga diapa-apain kok</p>
+						</div>
+						<div class="question">
+							<div class="q q-hb">
+								<p class="label">Apakah Kamu mengetahui Hb-mu?</p>
+								<input type="radio" name="hb-known" id="hb-known" class="input-radio"><label>Tau</label>
+								<input type="radio" name="hb-known" id="hb-not-known" class="input-radio"><label>Engga</label>
+								<input type="number" name="input-hb" id="input-hb" class="input-num"  placeholder="Isi HB-mu di sini" style="display: none;">
+							</div>
+							<div class="q">
+								<p class="label">Apakah Kamu mengetahui detak jantungmu?</p>
+								<p class="t t2">Kalau gatau, coba deh cara cek mandiri</p>
+								<input type="number" name="nadi" id="nadi" class="input-num"  placeholder="Isi detak jantungmu di sini">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-slide form-slide-3">
+				<div class="l-logo">
+					<div class="logo">
+						<img src="../assets/logo.svg">
+						<h1 class="jdl2 jdl-logo">Anemicare</h1>
+						<p class="text-logo">Kenali gejalanya, cegah anemia</p>
+					</div>
+				</div>
+				<div class="r-form">
+					<div class="slide-status">
+						<p>Bagian 3/5</p>
+					</div>
+					<div class="form-page">
+						<div class="head-form">
+							<h1 class="t t1">Gejala Klinis</h1>
+							<p class="t t2">Pilih kotak yang sesuai dengan gejala kamu dalam sebulan ini</p>
+						</div>
+						<div class="question">
+							<div class="q">
+ 								<input type="checkbox" id="pusing" class="q-check">
+								<label for="pusing" class="q-label">Pusing</label>
+
+ 								<input type="checkbox" id="lelah" class="q-check">
+								<label for="lelah" class="q-label">Cepat Lelah</label>
+
+ 								<input type="checkbox" id="pucat" class="q-check">
+								<label for="pucat" class="q-label">Pucat</label>
+
+ 								<input type="checkbox" id="sesak" class="q-check">
+								<label for="sesak" class="q-label">Sesak Saat Beraktivitas</label>
+
+ 								<input type="checkbox" id="konsen" class="q-check">
+								<label for="konsen" class="q-label">Sulit Konsentrasi</label>
+
+ 								<input type="checkbox" id="ngantuk" class="q-check">
+								<label for="ngantuk" class="q-label">Sering Mengantuk</label>
+
+ 								<input type="checkbox" id="j-takteratur" class="q-check">
+								<label for="j-takteratur" class="q-label">Detak Jantung Tidak Teratur</label>
+
+ 								<input type="checkbox" id="nafas" class="q-check">
+								<label for="nafas" class="q-label">Nafas Pendek</label>
+
+ 								<input type="checkbox" id="dingin" class="q-check">
+								<label for="dingin" class="q-label">Tangan dan Kaki Dingin </label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-slide form-slide-4">
+				<div class="l-logo">
+					<div class="logo">
+						<img src="../assets/logo.svg">
+						<h1 class="jdl2 jdl-logo">Anemicare</h1>
+						<p class="text-logo">Kenali gejalanya, cegah anemia</p>
+					</div>
+				</div>
+				<div class="r-form">
+					<div class="slide-status">
+						<p>Bagian 4/5</p>
+					</div>
+					<div class="form-page">
+						<div class="head-form">
+							<h1 class="t t1">Gaya Hidup</h1>
+							<p class="t t2">Bagaimana kebiasaan hidup kamu sehari-hari?</p>
+						</div>
+						<div class="question">
+							<div class="q-r">
+ 								<p class="label">Apakah kamu sering mengonsumsi makanan kaya zat besi?</p>
+								<p class="t t2">*Makanan kaya zat besi seperti hati, dagingmerah, bayam</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+							<div class="q-r">
+ 								<p class="label">Apakah kamu sering mengonsumsi Vitamin C?</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+							<div class="q-r">
+ 								<p class="label">Apakah kamu sering minum teh/kopi setelah makan?</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="cafein" id="cafein-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="cafein" id="cafein-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="cafein" id="cafein-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="cafein" id="cafein-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="cafein" id="cafein-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-slide form-slide-5">
+				<div class="l-logo">
+					<div class="logo">
+						<img src="../assets/logo.svg">
+						<h1 class="jdl2 jdl-logo">Anemicare</h1>
+						<p class="text-logo">Kenali gejalanya, cegah anemia</p>
+					</div>
+				</div>
+				<div class="r-form">
+					<div class="slide-status">
+						<p>Bagian 5/5</p>
+					</div>
+					<div class="form-page">
+						<div class="head-form">
+							<h1 class="t t1">Gaya Hidup</h1>
+							<p class="t t2">Bagaimana kebiasaan hidup kamu sehari-hari?</p>
+						</div>
+						<div class="question">
+							<div class="q-r">
+ 								<p class="label">Apakah kamu mengalami menstruasi berat?</p>
+								<p class="t t2">*lebih dari 7 hari</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="besi" id="besi-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+							<div class="q-r">
+ 								<p class="label">Apakah kamu seorang pendonor darah rutin?</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+							<div class="q-r">
+ 								<p class="label">Apakah kamu sering melakukan aktivitas fisik berat?</p>
+								<p class="t t2">*olahraga berat atau semacamnya</p>
+
+								<div class="q-radio">
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-1" class="input-radio">
+										<label>Tidak Pernah</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-2" class="input-radio">
+										<label>Jarang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-3" class="input-radio">
+										<label>Kadang - Kadang</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-4" class="input-radio">
+										<label>Sering</label>
+									</div>
+									<div class="q-radio-item">
+										<input type="radio" name="c" id="c-5" class="input-radio">
+										<label>Selalu</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-slide">
+				<p class="back-button" id="back-btn">Sebelumnya</p>
+				<p class="next-button" id="next-btn">Selanjutnya</p>
+			</div>
+
+		</div>
+	</div>
+</div>
 
 <script src="../script/toggleMenu.js"></script>
+<script src="../script/query.js"></script>
+<script src="../script/style.js"></script>
 
 </body>
 </html>

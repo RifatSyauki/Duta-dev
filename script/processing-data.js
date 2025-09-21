@@ -107,3 +107,16 @@ function calculate_nutrition_score() {
     else if(score < 4) return 'Sedang';
     else return 'Tinggi';
 }
+
+function clearAndRefresh() {
+  document.querySelectorAll("input").forEach(el => {
+    if (el.type !== "submit" && el.type !== "button" && el.type !== "radio" && el.type !== "checkbox") {
+      el.value = "";
+    }
+    if (el.type === "checkbox" || el.type === "radio") {
+      el.checked = false;
+    }
+  });
+
+  location.reload();
+}
