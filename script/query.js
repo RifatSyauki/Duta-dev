@@ -22,12 +22,12 @@ const gejala = document.querySelectorAll(".q-gejala input[type='checkbox']:check
 // const input_dingin = document.getElementById("dingin");
 // const input_pusing = document.getElementById("pusing");
 
-const input_besi = document.querySelector('input[name="besi"]:checked');
-const input_vitC = document.querySelector('input[name="c"]:checked');
-const input_cafein = document.querySelector('input[name="cafein"]:checked');
-const input_mens = document.querySelector('input[name="mens"]:checked');
-const input_donor = document.querySelector('input[name="donor"]:checked');
-const input_heavyPhysic = document.querySelector('input[name="fisik"]:checked');
+// const input_besi = document.querySelector('input[name="besi"]:checked');
+// const input_vitC = document.querySelector('input[name="c"]:checked');
+// const input_cafein = document.querySelector('input[name="cafein"]:checked');
+// const input_mens = document.querySelector('input[name="mens"]:checked');
+// const input_donor = document.querySelector('input[name="donor"]:checked');
+// const input_heavyPhysic = document.querySelector('input[name="fisik"]:checked');
 
 // const clinical_result = document.getElementById("clinical");
 // const nutrition_result = document.getElementById("nutrition");

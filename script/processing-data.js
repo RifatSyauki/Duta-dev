@@ -76,12 +76,12 @@ function buildChart(age, hb) {
 function calculate_nutrition_score() {
     let score = 0;
 
-    score += input_cafein.value;
-    score += input_mens.value;
-    score += input_donor.value;
-    score += input_heavyPhysic.value;
-    score += 4 - input_vitC.value;
-    score += 4 - input_besi.value;
+    score += Number(document.querySelector('input[name="cafein"]:checked').value);
+    score += Number(document.querySelector('input[name="mens"]:checked').value);
+    score += Number(document.querySelector('input[name="donor"]:checked').value);
+    score += Number(document.querySelector('input[name="fisik"]:checked').value);
+    score += 4 - Number(document.querySelector('input[name="c"]:checked').value);
+    score += 4 - Number(document.querySelector('input[name="besi"]:checked').value);
 
     return score/6;
 }
