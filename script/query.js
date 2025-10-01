@@ -47,3 +47,5 @@ const res_kategori = document.getElementById("kategori");
 const res_grap = document.getElementById("grap")
 const res_penjelasan = document.getElementById("penjelasan");
 const res_saran = document.getElementById("saran");
+
+const refresh_btn = document.getElementById("refresh-btn");
