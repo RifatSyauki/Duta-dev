@@ -73,39 +73,21 @@ function buildChart(age, hb) {
 }
 
 
-function calculate_clinical_score() {
-    let score = 0;
-
-    if(input_lemas.checked) score++;
-    if(input_pusing.checked) score++;
-    if(input_pucat.checked) score++;
-    if(input_sesak.checked) score++;
-    if(input_konsen.checked) score++;
-    if(input_ngantuk.checked) score++;
-    if(input_dJantung.checked) score++;
-    if(input_nafas.checked) score++;
-    if(input_dingin.checked) score++;
-
-    if(score < 4) return 'Tidak signifian';
-    else if(score < 7) return 'Sedang';
-    else return 'Tinggi';
-}
-
 function calculate_nutrition_score() {
     let score = 0;
 
-    if(input_besi.checked) score++;
-    if(input_vitC.checked) score++;
-    if(input_cafein.checked) score++;
-    if(input_mens.checked) score++;
-    if(input_donor.checked) score++;
-    if(input_heavyPhysic.checked) score++;
+    score += input_cafein.value;
+    score += input_mens.value;
+    score += input_donor.value;
+    score += input_heavyPhysic.value;
+    score += 4 - input_vitC.value;
+    score += 4 - input_besi.value;
 
-    console.log(score);
+    return score/6;
+}
 
-    if(score < 2) return 'Rendah';
-    else if(score < 4) return 'Sedang';
-    else return 'Tinggi';
+function calculate_imt() {
+    let score = input_bb / Math.sqrt(input_tb/100);
 }
 
 function clearAndRefresh() {
@@ -119,4 +101,79 @@ function clearAndRefresh() {
   });
 
   location.reload();
+}
+
+function res_display_form(categori) {
+    res_nama.innerHTML = input_name.value;
+
+    if(categori == 1) {
+        res_kategori.innerHTML = `Berdasarkan data yang kami dapat, kamu digolongkan sebagai remaja dengan resiko <span class="font-pink">rendah</span> terkena anemia. Hal tersebut didasari dari tidak adanya gejala yang signifikan, pola makan dan gaya hidup yang cukup baik, dan IMT yang normal.`;
+        res_penjelasan.innerHTML = "Remaja dalam kategori ini kemungkinan tidak mengalami anemia. Sistem tubuhnya stabil, suplai zat besi cukup, dan keseimbangan gizi mendukung produksi hemoglobin.";
+        res_saran.innerHTML = `
+                    <ul style="text-align: left;">
+                        <li>Pertahankan pola makan  bergizi</li>
+                        <li>Lanjutkan kebiasaan hidup sehat</li>
+                        <li>Tetap cek Hb secara berkala (misalnya 6 bulan sekali)</li>
+                    </ul>`
+    } else if(categori == 2) {
+        res_kategori.innerHTML = `Berdasarkan data yang kami dapat, kamu digolongkan sebagai remaja dengan resiko <span class="font-pink">menengah</span> terkena anemia. Hal tersebut didasari adanya gejala ringan / sedang, pola makan dan gaya hidup yang kurang teratur, dan IMT tidak ideal.`;
+        res_penjelasan.innerHTML = "Resiko anemia mulai muncul karena asupan gizi yang tidak optimal atau tubuh tidak menyerap zat besi secara efisien. Bisa juga akibat kebutuhan zat besi meningkat (misalnya karena menstruasi pada remaja putri), tapi tidak diimbangi asupan.";
+        res_saran.innerHTML = `
+                    <ul style="text-align: left;">
+                        <li>Tingkatkan konsumsi makanan tinggi zat besi (bayam, daging, kacang-kacangan.</li>
+                        <li>Rutin aktivitas fisik ringan</li>
+                        <li>Cek Hb ulang dalam 1 bulan</li>
+                        <li>Konsultasi ke petugas kesehatan bila kondisi tidak membaik</li>
+                    </ul>`
+    } else {
+        res_kategori.innerHTML = `Berdasarkan data yang kami dapat, kamu digolongkan sebagai remaja dengan resiko <span class="font-pink">tinggi</span> terkena anemia. Hal tersebut didasari pada banyaknya gejala, pola makan yang buruk, dan IMT yang rendah (gizi buruk) atau tinggi (obesitas).`;
+        res_penjelasan.innerHTML = "Remaja dalam kategori ini kemungkinan besar beresiko terkena anemia. Bisa jadi karena asupan gizi yang buruk, gaya hidup tidak sehat, atau kehilangan banyak darah (misal : menstruasi berat).";
+        res_saran.innerHTML = `
+                    <ul style="text-align: left;">
+                        <li>Segera ke layanan kesehatan untuk pemeriksaan darah lengkap</li>
+                        <li>Pertimbangkan suplementasi zat besi di bawah pengawasan medis</li>
+                        <li>Konsultasi gizi untuk pola makan seimbang</li>
+                        <li>jika parah, perlu penanganan medis lebih lanjut</li>
+                    </ul>`
+    }
+}
+
+function submit() {
+    const skor_nutrisi = calculate_nutrition_score();
+    const skor_imt = calculate_imt();
+    console.log(skor_nutrisi);
+    console.log(gejala.length);
+    if(known_hb.checked) console.log(input_hb.value);
+
+    if(known_hb.checked) {
+        if(input_hb.value < 10) {
+            if(gejala.length <= 6 && skor_nutrisi <= 3 && skor_imt >= 17 && skor_imt < 30) {
+                res_display_form(2);
+            } else {
+                res_display_form(3);
+            }
+        } else if(input_hb.value < 12 && input_woman.checked) {
+            if(gejala.length < 4 && skor_nutrisi < 2 && skor_imt >= 17 && skor_imt < 30) {
+                res_display_form(1);
+            } else if(skor_nutrisi < 4 && skor_imt >= 17 && skor_imt < 30) {
+                res_display_form(2)
+            } else {
+                res_display_form(3);
+            }
+        } else {
+            if(gejala.length < 2 && skor_nutrisi < 2 && skor_imt >= 17 && skor_imt < 30) {
+                res_display_form(1);
+            } else 
+            // if(gejala.length < 7 || skor_nutrisi < 4)
+            {
+                res_display_form(2);
+            }
+        }
+
+        buildChart(input_age.value, input_hb.value);
+        res_grap.style.display = "block";
+    }
+
+    form.style.display = "none";
+    res.style.display = "block";
 }

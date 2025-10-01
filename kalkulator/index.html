@@ -55,9 +55,11 @@
 	<div class="container con-jdl">
 		<h1 class="font-pink jdl1">Kalkulator</h1>
 		<h1 class="jdl2">Resiko Anemia</h1>
-		<h3 class="jdl3">Yuk mulai kenali kondisi tubuh kamu!</h3>
-		<div class="text">
-			<p> Isi data singkat ini biar hasil kalkulasinya lebih akurat.</p>
+		<div class="jdl-form" style="display:none;">
+			<h3 class="jdl3">Yuk mulai kenali kondisi tubuh kamu!</h3>
+			<div class="text">
+				<p> Isi data singkat ini biar hasil kalkulasinya lebih akurat.</p>
+			</div>
 		</div>
 	</div>
 	<div class="container con-form">
@@ -104,6 +106,9 @@
 									<input type="number" name="bb" id="bb" class="input-num"  placeholder="kg">
 								</div>
 							</div>
+							<div class="warning" style="display: none;">
+								<p>Formulir belum lengkap. Mohon periksa kembali.</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -131,12 +136,15 @@
 								<p class="label">Apakah Kamu mengetahui Hb-mu?</p>
 								<input type="radio" name="hb-known" id="hb-known" class="input-radio"><label>Tau</label>
 								<input type="radio" name="hb-known" id="hb-not-known" class="input-radio"><label>Engga</label>
-								<input type="number" name="input-hb" id="input-hb" class="input-num"  placeholder="Isi HB-mu di sini" style="display: none;">
+								<input type="number" name="input-hb" id="hb" class="input-num"  placeholder="Isi HB-mu di sini" style="display: none;">
 							</div>
 							<div class="q">
 								<p class="label">Apakah Kamu mengetahui detak jantungmu?</p>
 								<p class="t t2">Kalau gatau, coba deh cara cek mandiri</p>
 								<input type="number" name="nadi" id="nadi" class="input-num"  placeholder="Isi detak jantungmu di sini">
+							</div>
+							<div class="warning" style="display: none;">
+								<p>Formulir belum lengkap. Mohon periksa kembali.</p>
 							</div>
 						</div>
 					</div>
@@ -161,7 +169,7 @@
 							<p class="t t2">Pilih kotak yang sesuai dengan gejala kamu dalam sebulan ini</p>
 						</div>
 						<div class="question">
-							<div class="q">
+							<div class="q q-gejala">
  								<input type="checkbox" id="pusing" class="q-check">
 								<label for="pusing" class="q-label">Pusing</label>
 
@@ -188,6 +196,9 @@
 
  								<input type="checkbox" id="dingin" class="q-check">
 								<label for="dingin" class="q-label">Tangan dan Kaki Dingin </label>
+							</div>
+							<div class="warning" style="display: none;">
+								<p>Formulir belum lengkap. Mohon periksa kembali.</p>
 							</div>
 						</div>
 					</div>
@@ -218,23 +229,23 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-1" class="input-radio">
+										<input type="radio" name="besi" class="input-radio besi" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-2" class="input-radio">
+										<input type="radio" name="besi" class="input-radio besi" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-3" class="input-radio">
+										<input type="radio" name="besi" class="input-radio besi" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-4" class="input-radio">
+										<input type="radio" name="besi" class="input-radio besi" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-5" class="input-radio">
+										<input type="radio" name="besi" class="input-radio besi" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
@@ -244,23 +255,23 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-1" class="input-radio">
+										<input type="radio" name="c" class="input-radio" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-2" class="input-radio">
+										<input type="radio" name="c" class="input-radio" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-3" class="input-radio">
+										<input type="radio" name="c" class="input-radio" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-4" class="input-radio">
+										<input type="radio" name="c" class="input-radio" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-5" class="input-radio">
+										<input type="radio" name="c" class="input-radio" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
@@ -270,26 +281,29 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="cafein" id="cafein-1" class="input-radio">
+										<input type="radio" name="cafein" class="input-radio" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="cafein" id="cafein-2" class="input-radio">
+										<input type="radio" name="cafein" class="input-radio" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="cafein" id="cafein-3" class="input-radio">
+										<input type="radio" name="cafein" class="input-radio" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="cafein" id="cafein-4" class="input-radio">
+										<input type="radio" name="cafein" class="input-radio" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="cafein" id="cafein-5" class="input-radio">
+										<input type="radio" name="cafein" class="input-radio" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
+							</div>
+							<div class="warning" style="display: none;">
+								<p>Formulir belum lengkap. Mohon periksa kembali.</p>
 							</div>
 						</div>
 					</div>
@@ -320,23 +334,23 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-1" class="input-radio">
+										<input type="radio" name="mens" class="input-radio" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-2" class="input-radio">
+										<input type="radio" name="mens" class="input-radio" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-3" class="input-radio">
+										<input type="radio" name="mens" class="input-radio" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-4" class="input-radio">
+										<input type="radio" name="mens" class="input-radio" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="besi" id="besi-5" class="input-radio">
+										<input type="radio" name="mens" class="input-radio" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
@@ -346,23 +360,23 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-1" class="input-radio">
+										<input type="radio" name="donor" class="input-radio" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-2" class="input-radio">
+										<input type="radio" name="donor" class="input-radio" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-3" class="input-radio">
+										<input type="radio" name="donor" class="input-radio" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-4" class="input-radio">
+										<input type="radio" name="donor" class="input-radio" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-5" class="input-radio">
+										<input type="radio" name="donor" class="input-radio" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
@@ -373,26 +387,29 @@
 
 								<div class="q-radio">
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-1" class="input-radio">
+										<input type="radio" name="fisik" class="input-radio" value="0">
 										<label>Tidak Pernah</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-2" class="input-radio">
+										<input type="radio" name="fisik" class="input-radio" value="1">
 										<label>Jarang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-3" class="input-radio">
+										<input type="radio" name="fisik" class="input-radio" value="2">
 										<label>Kadang - Kadang</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-4" class="input-radio">
+										<input type="radio" name="fisik" class="input-radio" value="3">
 										<label>Sering</label>
 									</div>
 									<div class="q-radio-item">
-										<input type="radio" name="c" id="c-5" class="input-radio">
+										<input type="radio" name="fisik" class="input-radio" value="4">
 										<label>Selalu</label>
 									</div>
 								</div>
+							</div>
+							<div class="warning" style="display: none;">
+								<p>Formulir belum lengkap. Mohon periksa kembali.</p>
 							</div>
 						</div>
 					</div>
@@ -406,10 +423,50 @@
 
 		</div>
 	</div>
+	<div class="container con-result" style="display:none;">
+		<div class="jdl-result">
+			<h3 class="jdl4">Ringkasan Resiko</h3>
+		</div>
+		<div class="body-result">
+			<div class="box box-head">
+				<h1 class="jdl1 sapa-user"><span class="font-pink">Halo, </span><span id="nama-user"></span></h1>
+				<h3 class="jdl4">🌟 Ini Hasil Analisis Singkat dari Jawaban Kamu</h3>
+			</div>
+			<div class="box box-desk">
+				<p class="p-res"><span id="kategori"></span></p>
+			</div>
+			<div class="box box-desk">
+				<p class="p-res"><span id="penjelasan"></span></p>
+			</div>
+			<div class="box box-graph" id="grap" style="display:none;">
+				<h3 class="jdl4">Grafik HB Berdasarkan usia</h3>
+				<div class="char" id="char">
+					<div class="chart-container">
+				        <canvas id="graphChart"></canvas>
+				    </div>
+				</div>
+			</div>
+			<div class="box box-saran">
+				<h3 class="jdl4">Saran untukmu!</h3>
+				<div class="text-box" id="saran">
+					<!-- <p class="p-res">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+				</div>
+			</div>
+			<div class="box box-disclaimer">
+				<div class="text-box text-box-disc">
+					<h3 class="jdl4 jdl-disclaimer">⚠️ Disclaimer</h3>
+					<p class="p-disclaimer p-res">Hasil ini bukan diagnosis medis ya. Kalkulator <b>Anemicare</b> hanya memberikan estimasi berdasarkan jawaban kamu. Kalau kamu sering merasa lelah, pusing, atau punya gejala yang mengganggu, jangan ragu untuk konsultasi langsung ke dokter atau puskesmas terdekat.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
 <script src="../script/toggleMenu.js"></script>
 <script src="../script/query.js"></script>
+<script src="../script/processing-data.js"></script>
 <script src="../script/style.js"></script>
 
 </body>
