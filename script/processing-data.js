@@ -145,14 +145,13 @@ function submit() {
     console.log(gejala.length);
     if(known_hb.checked) console.log(input_hb.value);
 
-    if(known_hb.checked) {
-        if(input_hb.value < 10) {
+        if(known_hb.checked && input_hb.value < 10) {
             if(gejala.length <= 6 && skor_nutrisi <= 3 && skor_imt >= 17 && skor_imt < 30) {
                 res_display_form(2);
             } else {
                 res_display_form(3);
             }
-        } else if(input_hb.value < 12 && input_woman.checked) {
+        } else if(known_hb.checked && input_hb.value < 12 && input_woman.checked) {
             if(gejala.length < 4 && skor_nutrisi < 2 && skor_imt >= 17 && skor_imt < 30) {
                 res_display_form(1);
             } else if(skor_nutrisi < 4 && skor_imt >= 17 && skor_imt < 30) {
@@ -163,13 +162,14 @@ function submit() {
         } else {
             if(gejala.length < 2 && skor_nutrisi < 2 && skor_imt >= 17 && skor_imt < 30) {
                 res_display_form(1);
-            } else 
-            // if(gejala.length < 7 || skor_nutrisi < 4)
-            {
+            } else  if(gejala.length < 7 || skor_nutrisi < 4) {
                 res_display_form(2);
+            } else {
+                res_display_form(3);
             }
         }
 
+    if(known_hb.checked) {
         buildChart(input_age.value, input_hb.value);
         res_grap.style.display = "block";
     }
