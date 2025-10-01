@@ -90,7 +90,7 @@ function calculate_imt() {
     let score = input_bb / Math.sqrt(input_tb/100);
 }
 
-function clearAndRefresh() {
+refresh_btn.addEventListener("click", () => {
   document.querySelectorAll("input").forEach(el => {
     if (el.type !== "submit" && el.type !== "button" && el.type !== "radio" && el.type !== "checkbox") {
       el.value = "";
@@ -101,7 +101,7 @@ function clearAndRefresh() {
   });
 
   location.reload();
-}
+});
 
 function res_display_form(categori) {
     res_nama.innerHTML = input_name.value;
@@ -120,7 +120,7 @@ function res_display_form(categori) {
         res_penjelasan.innerHTML = "Resiko anemia mulai muncul karena asupan gizi yang tidak optimal atau tubuh tidak menyerap zat besi secara efisien. Bisa juga akibat kebutuhan zat besi meningkat (misalnya karena menstruasi pada remaja putri), tapi tidak diimbangi asupan.";
         res_saran.innerHTML = `
                     <ul style="text-align: left;">
-                        <li>Tingkatkan konsumsi makanan tinggi zat besi (bayam, daging, kacang-kacangan.</li>
+                        <li>Tingkatkan konsumsi makanan tinggi zat besi (bayam, daging, kacang-kacangan).</li>
                         <li>Rutin aktivitas fisik ringan</li>
                         <li>Cek Hb ulang dalam 1 bulan</li>
                         <li>Konsultasi ke petugas kesehatan bila kondisi tidak membaik</li>
